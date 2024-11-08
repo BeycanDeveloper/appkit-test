@@ -12,6 +12,10 @@ document
       adapters: [new EthersAdapter()],
       networks: [mainnet, arbitrum],
       projectId,
+      features: {
+        email: false,
+        socials: false,
+      }
     });
 
     modal.open();
@@ -28,6 +32,10 @@ document
       ],
       networks: [solana, solanaDevnet],
       projectId,
+      features: {
+        email: false,
+        socials: false,
+      }
     });
 
     modal.open();
@@ -45,6 +53,10 @@ document
       ],
       networks: [mainnet, arbitrum, solana, solanaDevnet],
       projectId,
+      features: {
+        email: false,
+        socials: false,
+      }
     });
 
     modal.open();

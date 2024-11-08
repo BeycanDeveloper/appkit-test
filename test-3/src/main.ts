@@ -5,17 +5,25 @@ import { SolanaAdapter } from "@reown/appkit-adapter-solana";
 import { solana, solanaDevnet } from "@reown/appkit/networks";
 const projectId = "113d9f5689edd84ff230c2a6d679c80c";
 
+let modal: any;
+
+document
+  .getElementById("open-modal")
+  ?.addEventListener("click", async function () {
+    modal?.open();
+  });
+
 document
   .getElementById("create-evm")
   ?.addEventListener("click", async function () {
-    const modal = createAppKit({
+    modal = createAppKit({
       adapters: [new EthersAdapter()],
       networks: [mainnet, arbitrum],
       projectId,
       features: {
         email: false,
         socials: false,
-      }
+      },
     });
 
     modal.open();
@@ -24,7 +32,7 @@ document
 document
   .getElementById("create-solana")
   ?.addEventListener("click", async function () {
-    const modal = createAppKit({
+    modal = createAppKit({
       adapters: [
         new SolanaAdapter({
           wallets: [],
@@ -35,7 +43,7 @@ document
       features: {
         email: false,
         socials: false,
-      }
+      },
     });
 
     modal.open();
@@ -44,7 +52,7 @@ document
 document
   .getElementById("create-multichain")
   ?.addEventListener("click", async function () {
-    const modal = createAppKit({
+    modal = createAppKit({
       adapters: [
         new EthersAdapter(),
         new SolanaAdapter({
@@ -56,7 +64,7 @@ document
       features: {
         email: false,
         socials: false,
-      }
+      },
     });
 
     modal.open();
